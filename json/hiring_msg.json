@@ -1,0 +1,54 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Hi Aman,",
+      "weight": "Bolder",
+      "size": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Good morning,",
+      "weight": "Bolder",
+      "size": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "We are reaching out to you based on yourskillset to volunteer as panel for an upcoming interview. The role requirement is for **Python / Django Developer**",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "Please choose one of the options below:",
+      "wrap": true,
+      "spacing": "Small"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "View Requirements",
+      "data": {
+        "action": "view_requirements"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "AI Suggested Slots",
+      "data": {
+        "action": "slot_suggestion"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Provide Own Availability",
+      "data": {
+        "action": "provide_availability"
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

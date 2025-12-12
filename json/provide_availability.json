@@ -1,0 +1,74 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Please share your availability for the interview:",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "You can:",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "  • Select from suggested slots below (you may pick multiple):",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "selectedSlot",
+      "style": "expanded",
+      "isMultiSelect": true,
+      "choices": [
+        {
+          "title": "Thu, 15 Feb 2:00 PM – 2:45 PM",
+          "value": "slot-1|2025-02-15T14:00"
+        },
+        {
+          "title": "Fri, 16 Feb 4:00 PM – 4:45 PM",
+          "value": "slot-2|2025-02-16T16:00"
+        },
+        {
+          "title": "Mon, 19 Feb 11:00 AM – 11:45 AM",
+          "value": "slot-3|2025-02-19T11:00"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Or enter a date and time manually:",
+      "wrap": true,
+      "separator": true,
+      "spacing": "Small"
+    },
+    {
+      "type": "Input.Date",
+      "id": "manualDate",
+      "placeholder": "Select a date"
+    },
+    {
+      "type": "Input.Time",
+      "id": "manualTime",
+      "placeholder": "Select a time"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Confirm Slot",
+      "data": { "action": "confirm" }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Decline participation",
+      "data": { "action": "decline" }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

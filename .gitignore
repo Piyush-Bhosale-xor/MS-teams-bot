@@ -1,0 +1,13 @@
+# Python virtual environment folders
+env/
+venv/
+.venv/
+
+# Common Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode settings (optional)
+.vscode/

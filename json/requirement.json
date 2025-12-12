@@ -1,0 +1,61 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "**Job Role:** Backend Engineer (Python/Django)",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "**Candidate Experience:** 4.5 years",
+      "wrap": true,
+      "separator": true
+    },
+        {
+      "type": "TextBlock",
+      "text": "**Skills:** Python, Django, REST, Docker, System Design",
+      "wrap": true,
+      "separator": true
+    },
+        {
+      "type": "TextBlock",
+      "text": "**Interview Window:** 12 Feb – 26 Feb",
+      "wrap": true,
+      "separator": true
+    },
+        {
+      "type": "TextBlock",
+      "text": "**Interview Duration:** 45 minutes",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "\nWould you like to:",
+      "wrap": true,
+      "separator": true,
+      "spacing": "Small"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "View Job Description",
+      "url": "C:\\Users\\piyush.bhosale\\Downloads\\Hiring Brief.pdf"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Continue to slot selection",
+      "data": { "action": "provide_availability" }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Decline participation",
+      "data": { "action": "decline" }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

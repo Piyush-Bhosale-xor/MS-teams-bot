@@ -1,0 +1,52 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "These slots work best with your availability:",
+      "wrap": true,
+      "separator": true
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "selectedSlot",
+      "style": "expanded",
+      "isMultiSelect": false,
+      "choices": [
+        {
+          "title": "Tue, 13 Feb 3:00 PM – 3:45 PM",
+          "value": "2025-02-13T15:00"
+        },
+        {
+          "title": "Wed, 14 Feb 11:30 AM – 12:15 PM",
+          "value": "2025-02-14T11:30"
+        },
+        {
+          "title": "Thu, 15 Feb 4:00 PM – 4:45 PM",
+          "value": "2025-02-15T16:00"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Please select one:",
+      "wrap": true,
+      "separator": true,
+      "spacing": "Small"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Confirm Slot",
+      "data": { "action": "confirm" }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Enter My Own Availability",
+      "data": { "action": "provide_availability" }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}
