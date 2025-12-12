@@ -27,6 +27,7 @@ The bot will start and listen at:
 http://0.0.0.0:3978/api/messages
 
 4️⃣ Connect to Bot Framework Emulator
+https://github.com/microsoft/BotFramework-Emulator/releases
 
 Open Bot Framework Emulator
 
