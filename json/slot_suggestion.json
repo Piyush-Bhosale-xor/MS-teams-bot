@@ -1,52 +1,56 @@
 {
-  "type": "AdaptiveCard",
-  "body": [
-    {
-      "type": "TextBlock",
-      "text": "These slots work best with your availability:",
-      "wrap": true,
-      "separator": true
-    },
-    {
-      "type": "Input.ChoiceSet",
-      "id": "selectedSlot",
-      "style": "expanded",
-      "isMultiSelect": false,
-      "choices": [
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "body": [
         {
-          "title": "Tue, 13 Feb 3:00 PM – 3:45 PM",
-          "value": "2025-02-13T15:00"
+            "type": "TextBlock",
+            "text": "These slots work best with your availability:",
+            "wrap": true,
+            "separator": true
         },
         {
-          "title": "Wed, 14 Feb 11:30 AM – 12:15 PM",
-          "value": "2025-02-14T11:30"
+            "type": "Input.ChoiceSet",
+            "id": "selectedSlot",
+            "style": "expanded",
+            "isMultiSelect": true,
+            "choices": [
+                {
+                    "title": "Tue, 13 Feb 3:00 PM – 3:45 PM",
+                    "value": "2025-02-13T15:00/2025-02-13T15:45"
+                },
+                {
+                    "title": "Wed, 14 Feb 11:30 AM – 12:15 PM",
+                    "value": "2025-02-14T11:30/2025-02-14T12:15"
+                },
+                {
+                    "title": "Thu, 15 Feb 4:00 PM – 4:45 PM",
+                    "value": "2025-02-15T16:00/2025-02-15T16:45"
+                }
+            ]
         },
         {
-          "title": "Thu, 15 Feb 4:00 PM – 4:45 PM",
-          "value": "2025-02-15T16:00"
+            "type": "TextBlock",
+            "text": "Select one or more and confirm:",
+            "wrap": true,
+            "separator": true,
+            "spacing": "Small"
         }
-      ]
-    },
-    {
-      "type": "TextBlock",
-      "text": "Please select one:",
-      "wrap": true,
-      "separator": true,
-      "spacing": "Small"
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Confirm Slot",
-      "data": { "action": "confirm" }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Enter My Own Availability",
-      "data": { "action": "provide_availability" }
-    }
-  ],
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.4"
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "✅ Confirm Slot(s)",
+            "data": {
+                "action": "confirm"
+            }
+        },
+        {
+            "type": "Action.Submit",
+            "title": "🗓️ Enter My Own Availability",
+            "data": {
+                "action": "provide_availability"
+            }
+        }
+    ]
 }

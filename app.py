@@ -131,10 +131,13 @@ class HelloCardBot:
                     end_str = end_dt.strftime("%I:%M %p").lstrip("0")
 
                     if sid:
-                        formatted_lines.append(f"- {sid} : {date_str} — {start_str} to {end_str}")
+                        formatted_lines.append(f"- {sid} : {date_str} - {start_str} to {end_str}")
                     else:
-                        formatted_lines.append(f"- {date_str} — {start_str} to {end_str}")
-
+                        formatted_lines.append(f"- {date_str} - {start_str} to {end_str}")
+                
+                #add data in data.txt
+                with open("./data.txt","w") as f:
+                    f.writelines("\n".join(formatted_lines))
                 # Build final message (single message)
                 message = (
                     "Thanks! I have recorded your availability."
@@ -226,5 +229,5 @@ if __name__ == "__main__":
     app = web.Application()
     app.router.add_post("/api/messages", messages)
 
-    print("Bot running at: http://localhost:3978/api/messages")
+    print("Bot running at: http://localhost:3978/api/interviewer")
     web.run_app(app, host="0.0.0.0", port=3978)

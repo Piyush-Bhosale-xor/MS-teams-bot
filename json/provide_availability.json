@@ -1,23 +1,34 @@
 {
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
+  "version": "1.5",
   "body": [
     {
-      "type": "TextBlock",
-      "text": "Please share your availability for the interview:",
-      "wrap": true,
-      "separator": true
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "📅 Interview Availability",
+          "weight": "Bolder",
+          "size": "Large",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "Please share your availability for the interview.",
+          "isSubtle": true,
+          "wrap": true,
+          "spacing": "Small"
+        }
+      ]
     },
     {
       "type": "TextBlock",
-      "text": "You can:",
+      "text": "✅ Suggested slots (pick one or more):",
+      "weight": "Bolder",
       "wrap": true,
-      "separator": true
-    },
-    {
-      "type": "TextBlock",
-      "text": "  • Select from suggested slots below (you may pick multiple):",
-      "wrap": true,
-      "separator": true
+      "spacing": "Medium"
     },
     {
       "type": "Input.ChoiceSet",
@@ -37,38 +48,99 @@
           "title": "Mon, 19 Feb 11:00 AM – 11:45 AM",
           "value": "slot-3|2025-02-19T11:00"
         }
+      ],
+      "placeholder": "Select one or more suggested slots"
+    },
+    {
+      "type": "ActionSet",
+      "spacing": "Medium",
+      "actions": [
+        {
+          "type": "Action.ToggleVisibility",
+          "title": "✍️ Enter a custom date & time",
+          "targetElements": [
+            "manualSection"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "manualSection",
+      "isVisible": false,
+      "style": "good",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Manual entry",
+          "weight": "Bolder",
+          "wrap": true
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "Input.Date",
+                  "id": "manualDate",
+                  "label": "Date",
+                  "isRequired": false,
+                  "errorMessage": "Please select a date"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "Input.Time",
+                  "id": "manualTime",
+                  "label": "Start time",
+                  "isRequired": false,
+                  "errorMessage": "Please select a start time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "Notes (optional)",
+          "wrap": true,
+          "spacing": "Small"
+        },
+        {
+          "type": "Input.Text",
+          "id": "notes",
+          "isMultiline": true,
+          "placeholder": "Any constraints or comments"
+        }
       ]
     },
     {
       "type": "TextBlock",
-      "text": "Or enter a date and time manually:",
+      "text": "Timezone: Asia/Kolkata (IST)",
+      "isSubtle": true,
       "wrap": true,
-      "separator": true,
-      "spacing": "Small"
-    },
-    {
-      "type": "Input.Date",
-      "id": "manualDate",
-      "placeholder": "Select a date"
-    },
-    {
-      "type": "Input.Time",
-      "id": "manualTime",
-      "placeholder": "Select a time"
+      "spacing": "Medium"
     }
   ],
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Confirm Slot",
+      "title": "✅ Confirm Slot(s)",
       "data": { "action": "confirm" }
     },
     {
       "type": "Action.Submit",
-      "title": "Decline participation",
-      "data": { "action": "decline" }
+      "title": "❌ Decline participation",
+      "data": {
+        "action": "decline"
+      }
     }
-  ],
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.4"
+  ]
 }
